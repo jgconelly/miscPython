@@ -2,12 +2,12 @@ import re
 #from multiprocessing import Process, freeze_support, set_start_method
 
 def main(): #please note, this is for python 2.x. Will need to be updated to python 3.x when moved to github
-	grep_term = raw_input("Please Enter Search Term:")
-	grep_file_path = raw_input("Please Enter File Path:")
+	grep_term = input("Please Enter Search Term:")
+	grep_file_path = input("Please Enter File Path:")
 
 	def process(line):
 		if grep_term in line:
-			print line
+			print (line)
 
 	with open(grep_file_path) as f:
 		for line in f:
