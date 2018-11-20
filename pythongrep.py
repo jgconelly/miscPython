@@ -12,7 +12,6 @@ def argparsegrp():
 	parser.add_argument("grep_file_path" , help='File path to grep')
 	args = parser.parse_args()
 	full_grep = grep_process(args.grep, args.grep_file_path)
-	print (full_grep)
 
 def grep_process(grep_term, grep_file_path):
 	def process(line):
