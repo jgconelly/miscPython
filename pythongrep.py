@@ -1,11 +1,12 @@
 import re
 import argparse
-#from multiprocessing import Process, freeze_support, set_start_method
+import multiprocessing as mp
 
-def main(): #please note, this is for python 2.x. Will need to be updated to python 3.x when moved to github
+def main(): 
 	argparsegrp()
-	grep_term = input("Please Enter Search Term:")
-	grep_file_path = input("Please Enter File Path:")
+	#process_input()
+	grep_term = "split"
+	grep_file_path = "/Users/Azreal/Documents/jcrosalind/dictionaries5.py"
 	def process(line):
 		if grep_term in line:
 			print (line)
@@ -16,22 +17,27 @@ def main(): #please note, this is for python 2.x. Will need to be updated to pyt
 
 def argparsegrp():
 	parser = argparse.ArgumentParser()
-	parser.add_argument("-A", help="Print num lines of trailing context after each match")
+	parser.add_argument("-c", help="A count of selected lines is written to a standard ouput")
 	args = parser.parse_args()
-	if args.A:
+	if args.c:
 		print (args.echo)
 
+#def process_input():
+#	grep_term = input("Please Enter Search Term:")
+#	grep_file_path = input("Please Enter File Path:")
+#	return grep_term, grep_file_path
+
+#def grep_process(grep_term, grep_file_path):
+#	if grep_term in line:
+#		print(line)
+#	with open(grep_file_path) as f:
+#		for line in f:
+#			process(line)
+#	result = re.match(grep_term, grep_file_path)
 
 
-
-"""
 if __name__ == '__main__':
-    set_start_method('spawn')
-    p = Process(target=main)
-    p.start()
-"""
-
-
-
-if __name__ == '__main__':
-    main()
+	p = mp.Process(target=main)
+	p.start()
+	p.join()
+    #main()
