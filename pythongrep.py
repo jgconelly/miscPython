@@ -25,7 +25,7 @@ def grep_process(grep_term, grep_file_path): #Old way
 def re_grep(grep_term, grep_file_path): #Using Regular expressions
 		for line in open(grep_file_path).readlines():
 			if re.search(grep_term, line):
-				print (line)
+				print (line.rstrip())
 	#p = re.compile('grep_term')
 	#m = p.search(grep_file_path)
 	#result = re.search(grep_term, grep_file_path)
