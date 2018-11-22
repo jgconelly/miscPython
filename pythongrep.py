@@ -11,9 +11,9 @@ def argparsegrp():
 	parser.add_argument("grep", help="Nothing but grep")
 	parser.add_argument("grep_file_path" , help='File path to grep')
 	args = parser.parse_args()
-	full_grep = grep_process(args.grep, args.grep_file_path)
+	full_grep = re_grep(args.grep, args.grep_file_path)
 
-def grep_process(grep_term, grep_file_path):
+def grep_process(grep_term, grep_file_path): #Old way
 	def process(line):
 		if grep_term in line:
 			print (line)
@@ -22,11 +22,14 @@ def grep_process(grep_term, grep_file_path):
 			process(line)
 	re_grep(grep_term, grep_file_path)		
 
-def re_grep(grep_term, grep_file_path):
-	p = re.compile('grep_term')
-	m = p.search(grep_file_path)
-	result = re.search(grep_term, grep_file_path)
-	print (type(result))
+def re_grep(grep_term, grep_file_path): #Using Regular expressions
+		for line in open(grep_file_path).readlines():
+			if re.search(grep_term, line):
+				print (line)
+	#p = re.compile('grep_term')
+	#m = p.search(grep_file_path)
+	#result = re.search(grep_term, grep_file_path)
+	#print (type(result))
 
 if __name__ == '__main__':
 	p = mp.Process(target=main)
