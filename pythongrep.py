@@ -35,3 +35,8 @@ if __name__ == '__main__':
 	p = mp.Process(target=main)
 	p.start()
 	p.join()
+
+
+
+#if __name__ == '__main__':
+#	with mp.Pool(processes=4) as pool:
