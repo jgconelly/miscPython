@@ -14,7 +14,7 @@ def argparsegrp():
 	full_grep = re_grep(args.grep, args.grep_file_path)	
 
 def re_grep(grep_term, grep_file_path): #Using Regular expressions
-		for line in open(grep_file_path).readlines():
+		for line in open(grep_file_path):
 			if re.search(grep_term, line):
 				print (line.rstrip())
 
