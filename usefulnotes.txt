@@ -1,0 +1,75 @@
+11/27/18
+
+glob = *
+
+**/*.py = recursively search through directory for all .py extensions. 
+
+Cpython: 
+
+Jpython: java based python. Forked by Paypal. Running it ontop on the JVM. Stuck on 2.7
+Iron Python: Sponsored by Microsoft
+Micropython: Python designed to run on microchips. Provides floating point and 64 bit integers with much stricker limitations. Can be run in 16 kb of ram. 
+Pypy: Re-write cpython in python. The issue with this is that python is slow. JIT = Just in Time complier. Can be faster than python in certain situations, hot loops. 
+
+Twisted: Networking library. async
+
+1. Iterator and iterable
+a = [1, 2, 3]
+i = iter(a) # built in function
+dir(i) #will list all attributes and methods of that iterator. We are looking for __next__
+Check out __iter__ and all the special methods on the python3 
+
+2. Next(..) built in function, .__next__()
+
+3. raise Stopfunction
+iterator protocol
+1. iter(...) built-in function, .__iter__()
+2. next(...) built-in function, .__iter__()
+3. Raise Stopiteration 
+
+read_lines() takes it into memory. 
+
+Code can be an executable program or it can be a library. It takes on a dual nature. All of this can be done with __main__
+
+if __main_
+
+
+python -m pydoc -help 
+
+python -m pydoc -p 5000 # allows you to see web interface at localhost:
+
+currying -> g = functools.partial(funky, d=50)
+
+imap_unordered(we don't care about the order of the results)
+
+deck in the collections module
+
+Amdahl's law - upper limit of mp. 
+
+Check out reverse index, this is how most databasses work. 
+
+Next projects? 
+
+MLB data
+1. Screen scrape
+2. Baseball API
+3. Import a database, csv file maybe? 
+
+1. Get data
+2. Create simulation of a baseball season or for a baseball team. 
+3. How can we make a real answer? 
+
+
+Check out turtle as well, good way to make some games. 
+
+Check out testing frameworks as a potential project. Doctest, unittest, hypothesis. 
+
+Counting words. 
+
+Don Knuth 
+Doug Mackelroy
+
+stackoverflow sort
+
+
+python -m idlelib.idle
