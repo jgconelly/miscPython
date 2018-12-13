@@ -1,0 +1,297 @@
+Python 3.6.3 |Anaconda custom (64-bit)| (default, Oct  6 2017, 12:04:38) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> import pandas as pd
+>>> imported_df = pd.read_csv("/Users/Azreal/Downloads/baseballdatabank-master/core/parks.csv")
+>>> print (imported_df)
+    park.key                            park.name  \
+0      ALB01                       Riverside Park   
+1      ALT01                        Columbia Park   
+2      ANA01             Angel Stadium of Anaheim   
+3      ARL01                    Arlington Stadium   
+4      ARL02        Rangers Ballpark in Arlington   
+5      ATL01        Atlanta-Fulton County Stadium   
+6      ATL02                         Turner Field   
+7      ATL03                        Suntrust Park   
+8      BAL01               Madison Avenue Grounds   
+9      BAL02                       Newington Park   
+10     BAL03                        Oriole Park I   
+11     BAL04                           Belair Lot   
+12     BAL05                      Monumental Park   
+13     BAL06                       Oriole Park II   
+14     BAL07                      Oriole Park III   
+15     BAL09                       Oriole Park IV   
+16     BAL10                        Terrapin Park   
+17     BAL11                     Memorial Stadium   
+18     BAL12          Oriole Park at Camden Yards   
+19     BOS01                  South End Grounds I   
+20     BOS02                    Dartmouth Grounds   
+21     BOS03                 South End Grounds II   
+22     BOS04              Congress Street Grounds   
+23     BOS05                South End Grounds III   
+24     BOS06   Huntington Avenue Baseball Grounds   
+25     BOS07                          Fenway Park   
+26     BOS08                         Braves Field   
+27     BUF01                    Riverside Grounds   
+28     BUF02                       Olympic Park I   
+29     BUF03                      Olympic Park II   
+..       ...                                  ...   
+222    TOL01                          League Park   
+223    TOL02               Tri-State Fair Grounds   
+224    TOL03                        Speranza Park   
+225    TOL04                          Armory Park   
+226    TOR01                   Exhibition Stadium   
+227    TOR02                        Rogers Centre   
+228    TRO01                   Haymakers' Grounds   
+229    TRO02                       Putnam Grounds   
+230    WAR01                     Rocky Point Park   
+231    WAS01                      Olympic Grounds   
+232    WAS02                     National Grounds   
+233    WAS03                      Capitol Grounds   
+234    WAS04                        Athletic Park   
+235    WAS05                   Swampoodle Grounds   
+236    WAS06                       Boundary Field   
+237    WAS07               American League Park I   
+238    WAS08              American League Park II   
+239    WAS09                     Griffith Stadium   
+240    WAS10            Robert F. Kennedy Stadium   
+241    WAS11                       Nationals Park   
+242    WAT01               Troy Ball Club Grounds   
+243    WAV01                  Waverly Fairgrounds   
+244    WEE01                      Monitor Grounds   
+245    WHE01                       Island Grounds   
+246    WIL01                    Union Street Park   
+247    WIL02        BB&T Ballpark at Bowman Field   
+248    WNY01     West New York Field Club Grounds   
+249    WOR01   Agricultural County Fair Grounds I   
+250    WOR02  Agricultural County Fair Grounds II   
+251    WOR03       Worcester Driving Park Grounds   
+
+                                   park.alias           city state country  
+0                                         NaN         Albany    NY      US  
+1                                         NaN        Altoona    PA      US  
+2               Edison Field; Anaheim Stadium        Anaheim    CA      US  
+3                                         NaN      Arlington    TX      US  
+4    The Ballpark in Arlington; Ameriquest Fl      Arlington    TX      US  
+5                                         NaN        Atlanta    GA      US  
+6                                         NaN        Atlanta    GA      US  
+7                                         NaN        Atlanta    GA      US  
+8                                         NaN      Baltimore    MD      US  
+9                                         NaN      Baltimore    MD      US  
+10                                        NaN      Baltimore    MD      US  
+11                                        NaN      Baltimore    MD      US  
+12                                        NaN      Baltimore    MD      US  
+13                                        NaN      Baltimore    MD      US  
+14                                        NaN      Baltimore    MD      US  
+15                       American League Park      Baltimore    MD      US  
+16                              Oriole Park V      Baltimore    MD      US  
+17                                        NaN      Baltimore    MD      US  
+18                                        NaN      Baltimore    MD      US  
+19                     Walpole Street Grounds         Boston    MA      US  
+20                                 Union Park         Boston    MA      US  
+21                                        NaN         Boston    MA      US  
+22                                        NaN         Boston    MA      US  
+23                                        NaN         Boston    MA      US  
+24                                        NaN         Boston    MA      US  
+25                                        NaN         Boston    MA      US  
+26                                   Bee Hive         Boston    MA      US  
+27                                        NaN        Buffalo    NY      US  
+28                                        NaN        Buffalo    NY      US  
+29                                        NaN        Buffalo    NY      US  
+..                                        ...            ...   ...     ...  
+222                                       NaN         Toledo    OH      US  
+223                                       NaN         Toledo    OH      US  
+224                                       NaN         Toledo    OH      US  
+225                                       NaN         Toledo    OH      US  
+226                                       NaN        Toronto    ON      CA  
+227                                   Skydome        Toronto    ON      CA  
+228                                       NaN           Troy    NY      US  
+229                                       NaN           Troy    NY      US  
+230                                       NaN        Warwick    RI      US  
+231                                       NaN     Washington    DC      US  
+232                                       NaN     Washington    DC      US  
+233                                       NaN     Washington    DC      US  
+234                                       NaN     Washington    DC      US  
+235                                       NaN     Washington    DC      US  
+236                                       NaN     Washington    DC      US  
+237                                       NaN     Washington    DC      US  
+238                                       NaN     Washington    DC      US  
+239                                       NaN     Washington    DC      US  
+240                              D.C. Stadium     Washington    DC      US  
+241                                       NaN     Washington    DC      US  
+242                                       NaN     Watervliet    NY      US  
+243                                       NaN        Waverly    NJ      US  
+244                                       NaN      Weehawken    NJ      US  
+245                                       NaN       Wheeling    WV      US  
+246                                       NaN     Wilmington    DE      US  
+247                                       NaN   Williamsport    PA      US  
+248                                       NaN  West New York    NJ      US  
+249                                       NaN      Worcester    MA      US  
+250                                       NaN      Worcester    MA      US  
+251                                       NaN      Worcester    MA      US  
+
+[252 rows x 6 columns]
+>>> print (imported_df.head())
+  park.key                      park.name  \
+0    ALB01                 Riverside Park   
+1    ALT01                  Columbia Park   
+2    ANA01       Angel Stadium of Anaheim   
+3    ARL01              Arlington Stadium   
+4    ARL02  Rangers Ballpark in Arlington   
+
+                                 park.alias       city state country  
+0                                       NaN     Albany    NY      US  
+1                                       NaN    Altoona    PA      US  
+2             Edison Field; Anaheim Stadium    Anaheim    CA      US  
+3                                       NaN  Arlington    TX      US  
+4  The Ballpark in Arlington; Ameriquest Fl  Arlington    TX      US  
+>>> imported_df.to_sql(Parks, if_exists='append', index=False)
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    imported_df.to_sql(Parks, if_exists='append', index=False)
+NameError: name 'Parks' is not defined
+>>> import sqlite3
+>>> imported_df.to_sql(test, if_exists='append', index=False)
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    imported_df.to_sql(test, if_exists='append', index=False)
+NameError: name 'test' is not defined
+>>> import csv
+>>> imported_df.import
+SyntaxError: invalid syntax
+>>> imported_df.import()
+SyntaxError: invalid syntax
+>>> from sqlalchemy import create_engine
+>>> engine = create_engine('sqlite://', echo=False)
+>>> imported_df
+    park.key                            park.name  \
+0      ALB01                       Riverside Park   
+1      ALT01                        Columbia Park   
+2      ANA01             Angel Stadium of Anaheim   
+3      ARL01                    Arlington Stadium   
+4      ARL02        Rangers Ballpark in Arlington   
+5      ATL01        Atlanta-Fulton County Stadium   
+6      ATL02                         Turner Field   
+7      ATL03                        Suntrust Park   
+8      BAL01               Madison Avenue Grounds   
+9      BAL02                       Newington Park   
+10     BAL03                        Oriole Park I   
+11     BAL04                           Belair Lot   
+12     BAL05                      Monumental Park   
+13     BAL06                       Oriole Park II   
+14     BAL07                      Oriole Park III   
+15     BAL09                       Oriole Park IV   
+16     BAL10                        Terrapin Park   
+17     BAL11                     Memorial Stadium   
+18     BAL12          Oriole Park at Camden Yards   
+19     BOS01                  South End Grounds I   
+20     BOS02                    Dartmouth Grounds   
+21     BOS03                 South End Grounds II   
+22     BOS04              Congress Street Grounds   
+23     BOS05                South End Grounds III   
+24     BOS06   Huntington Avenue Baseball Grounds   
+25     BOS07                          Fenway Park   
+26     BOS08                         Braves Field   
+27     BUF01                    Riverside Grounds   
+28     BUF02                       Olympic Park I   
+29     BUF03                      Olympic Park II   
+..       ...                                  ...   
+222    TOL01                          League Park   
+223    TOL02               Tri-State Fair Grounds   
+224    TOL03                        Speranza Park   
+225    TOL04                          Armory Park   
+226    TOR01                   Exhibition Stadium   
+227    TOR02                        Rogers Centre   
+228    TRO01                   Haymakers' Grounds   
+229    TRO02                       Putnam Grounds   
+230    WAR01                     Rocky Point Park   
+231    WAS01                      Olympic Grounds   
+232    WAS02                     National Grounds   
+233    WAS03                      Capitol Grounds   
+234    WAS04                        Athletic Park   
+235    WAS05                   Swampoodle Grounds   
+236    WAS06                       Boundary Field   
+237    WAS07               American League Park I   
+238    WAS08              American League Park II   
+239    WAS09                     Griffith Stadium   
+240    WAS10            Robert F. Kennedy Stadium   
+241    WAS11                       Nationals Park   
+242    WAT01               Troy Ball Club Grounds   
+243    WAV01                  Waverly Fairgrounds   
+244    WEE01                      Monitor Grounds   
+245    WHE01                       Island Grounds   
+246    WIL01                    Union Street Park   
+247    WIL02        BB&T Ballpark at Bowman Field   
+248    WNY01     West New York Field Club Grounds   
+249    WOR01   Agricultural County Fair Grounds I   
+250    WOR02  Agricultural County Fair Grounds II   
+251    WOR03       Worcester Driving Park Grounds   
+
+                                   park.alias           city state country  
+0                                         NaN         Albany    NY      US  
+1                                         NaN        Altoona    PA      US  
+2               Edison Field; Anaheim Stadium        Anaheim    CA      US  
+3                                         NaN      Arlington    TX      US  
+4    The Ballpark in Arlington; Ameriquest Fl      Arlington    TX      US  
+5                                         NaN        Atlanta    GA      US  
+6                                         NaN        Atlanta    GA      US  
+7                                         NaN        Atlanta    GA      US  
+8                                         NaN      Baltimore    MD      US  
+9                                         NaN      Baltimore    MD      US  
+10                                        NaN      Baltimore    MD      US  
+11                                        NaN      Baltimore    MD      US  
+12                                        NaN      Baltimore    MD      US  
+13                                        NaN      Baltimore    MD      US  
+14                                        NaN      Baltimore    MD      US  
+15                       American League Park      Baltimore    MD      US  
+16                              Oriole Park V      Baltimore    MD      US  
+17                                        NaN      Baltimore    MD      US  
+18                                        NaN      Baltimore    MD      US  
+19                     Walpole Street Grounds         Boston    MA      US  
+20                                 Union Park         Boston    MA      US  
+21                                        NaN         Boston    MA      US  
+22                                        NaN         Boston    MA      US  
+23                                        NaN         Boston    MA      US  
+24                                        NaN         Boston    MA      US  
+25                                        NaN         Boston    MA      US  
+26                                   Bee Hive         Boston    MA      US  
+27                                        NaN        Buffalo    NY      US  
+28                                        NaN        Buffalo    NY      US  
+29                                        NaN        Buffalo    NY      US  
+..                                        ...            ...   ...     ...  
+222                                       NaN         Toledo    OH      US  
+223                                       NaN         Toledo    OH      US  
+224                                       NaN         Toledo    OH      US  
+225                                       NaN         Toledo    OH      US  
+226                                       NaN        Toronto    ON      CA  
+227                                   Skydome        Toronto    ON      CA  
+228                                       NaN           Troy    NY      US  
+229                                       NaN           Troy    NY      US  
+230                                       NaN        Warwick    RI      US  
+231                                       NaN     Washington    DC      US  
+232                                       NaN     Washington    DC      US  
+233                                       NaN     Washington    DC      US  
+234                                       NaN     Washington    DC      US  
+235                                       NaN     Washington    DC      US  
+236                                       NaN     Washington    DC      US  
+237                                       NaN     Washington    DC      US  
+238                                       NaN     Washington    DC      US  
+239                                       NaN     Washington    DC      US  
+240                              D.C. Stadium     Washington    DC      US  
+241                                       NaN     Washington    DC      US  
+242                                       NaN     Watervliet    NY      US  
+243                                       NaN        Waverly    NJ      US  
+244                                       NaN      Weehawken    NJ      US  
+245                                       NaN       Wheeling    WV      US  
+246                                       NaN     Wilmington    DE      US  
+247                                       NaN   Williamsport    PA      US  
+248                                       NaN  West New York    NJ      US  
+249                                       NaN      Worcester    MA      US  
+250                                       NaN      Worcester    MA      US  
+251                                       NaN      Worcester    MA      US  
+
+[252 rows x 6 columns]
+>>> imported_df.to_sql('Parks', con=engine)
+>>> engine.execute("select * from Parks").fetchall()
+[(0, 'ALB01', 'Riverside Park', None, 'Albany', 'NY', 'US'), (1, 'ALT01', 'Columbia Park', None, 'Altoona', 'PA', 'US'), (2, 'ANA01', 'Angel Stadium of Anaheim', 'Edison Field; Anaheim Stadium', 'Anaheim', 'CA', 'US'), (3, 'ARL01', 'Arlington Stadium', None, 'Arlington', 'TX', 'US'), (4, 'ARL02', 'Rangers Ballpark in Arlington', 'The Ballpark in Arlington; Ameriquest Fl', 'Arlington', 'TX', 'US'), (5, 'ATL01', 'Atlanta-Fulton County Stadium', None, 'Atlanta', 'GA', 'US'), (6, 'ATL02', 'Turner Field', None, 'Atlanta', 'GA', 'US'), (7, 'ATL03', 'Suntrust Park', None, 'Atlanta', 'GA', 'US'), (8, 'BAL01', 'Madison Avenue Grounds', None, 'Baltimore', 'MD', 'US'), (9, 'BAL02', 'Newington Park', None, 'Baltimore', 'MD', 'US'), (10, 'BAL03', 'Oriole Park I', None, 'Baltimore', 'MD', 'US'), (11, 'BAL04', 'Belair Lot', None, 'Baltimore', 'MD', 'US'), (12, 'BAL05', 'Monumental Park', None, 'Baltimore', 'MD', 'US'), (13, 'BAL06', 'Oriole Park II', None, 'Baltimore', 'MD', 'US'), (14, 'BAL07', 'Oriole Park III', None, 'Baltimore', 'MD', 'US'), (15, 'BAL09', 'Oriole Park IV', 'American League Park', 'Baltimore', 'MD', 'US'), (16, 'BAL10', 'Terrapin Park', 'Oriole Park V', 'Baltimore', 'MD', 'US'), (17, 'BAL11', 'Memorial Stadium', None, 'Baltimore', 'MD', 'US'), (18, 'BAL12', 'Oriole Park at Camden Yards', None, 'Baltimore', 'MD', 'US'), (19, 'BOS01', 'South End Grounds I', 'Walpole Street Grounds', 'Boston', 'MA', 'US'), (20, 'BOS02', 'Dartmouth Grounds', 'Union Park', 'Boston', 'MA', 'US'), (21, 'BOS03', 'South End Grounds II', None, 'Boston', 'MA', 'US'), (22, 'BOS04', 'Congress Street Grounds', None, 'Boston', 'MA', 'US'), (23, 'BOS05', 'South End Grounds III', None, 'Boston', 'MA', 'US'), (24, 'BOS06', 'Huntington Avenue Baseball Grounds', None, 'Boston', 'MA', 'US'), (25, 'BOS07', 'Fenway Park', None, 'Boston', 'MA', 'US'), (26, 'BOS08', 'Braves Field', 'Bee Hive', 'Boston', 'MA', 'US'), (27, 'BUF01', 'Riverside Grounds', None, 'Buffalo', 'NY', 'US'), (28, 'BUF02', 'Olympic Park I', None, 'Buffalo', 'NY', 'US'), (29, 'BUF03', 'Olympic Park II', None, 'Buffalo', 'NY', 'US'), (30, 'BUF04', 'International Fair Association Grounds', 'Federal League Park', 'Buffalo', 'NY', 'US'), (31, 'CAN01', 'Mahaffey Park', 'Pastime Park', 'Canton', 'OH', 'US'), (32, 'CAN02', 'Pastime Park', None, 'Canton', 'OH', 'US'), (33, 'CHI01', 'Lake Front Park I', 'Union Base-ball Grounds', 'Chicago', 'IL', 'US'), (34, 'CHI02', '23rd Street Park', None, 'Chicago', 'IL', 'US'), (35, 'CHI03', 'Lake Front Park II', None, 'Chicago', 'IL', 'US'), (36, 'CHI05', 'South Side Park I', 'Cricket Club Grounds; Union Grounds', 'Chicago', 'IL', 'US'), (37, 'CHI06', 'West Side Park', None, 'Chicago', 'IL', 'US'), (38, 'CHI07', 'South Side Park II', None, 'Chicago', 'IL', 'US'), (39, 'CHI08', 'West Side Grounds', None, 'Chicago', 'IL', 'US'), (40, 'CHI09', 'South Side Park III', None, 'Chicago', 'IL', 'US'), (41, 'CHI10', 'Comiskey Park I', 'White Sox Park', 'Chicago', 'IL', 'US'), (42, 'CHI11', 'Wrigley Field', 'Weeghman Park; Cubs Park', 'Chicago', 'IL', 'US'), (43, 'CHI12', 'U.S. Cellular Field', 'White Sox Park; Comiskey Park II', 'Chicago', 'IL', 'US'), (44, 'CIN01', 'Lincoln Park Grounds', 'Union Cricket Club Grounds', 'Cincinnati', 'OH', 'US'), (45, 'CIN02', 'Avenue Grounds', None, 'Cincinnati', 'OH', 'US'), (46, 'CIN03', 'Bank Street Grounds', None, 'Cincinnati', 'OH', 'US'), (47, 'CIN04', 'League Park I', None, 'Cincinnati', 'OH', 'US'), (48, 'CIN05', 'League Park II', None, 'Cincinnati', 'OH', 'US'), (49, 'CIN06', 'Palace of the Fans', 'League Park III', 'Cincinnati', 'OH', 'US'), (50, 'CIN07', 'Crosley Field', 'Redland Field', 'Cincinnati', 'OH', 'US'), (51, 'CIN08', 'Cinergy Field', 'Riverfront Stadium', 'Cincinnati', 'OH', 'US'), (52, 'CIN09', 'Great American Ballpark', None, 'Cincinnati', 'OH', 'US'), (53, 'CLE01', 'National Association Grounds', None, 'Cleveland', 'OH', 'US'), (54, 'CLE02', 'League Park I', 'Kennard Street Park', 'Cleveland', 'OH', 'US'), (55, 'CLE03', 'League Park II', 'American Association Park', 'Cleveland', 'OH', 'US'), (56, 'CLE04', 'Brotherhood Park', 'Players League Park', 'Cleveland', 'OH', 'US'), (57, 'CLE05', 'League Park III', 'National League Park III', 'Cleveland', 'OH', 'US'), (58, 'CLE06', 'League Park IV', 'Dunn Field', 'Cleveland', 'OH', 'US'), (59, 'CLE07', 'Cleveland Stadium', 'Municipal Stadium', 'Cleveland', 'OH', 'US'), (60, 'CLE08', 'Progressive Field', 'Jacobs Field', 'Cleveland', 'OH', 'US'), (61, 'CLE09', 'Cedar Avenue Driving Park', None, 'Cleveland', 'OH', 'US'), (62, 'CLL01', 'Euclid Beach Park', None, 'Collinwood', 'OH', 'US'), (63, 'COL01', 'Recreation Park I', None, 'Columbus', 'OH', 'US'), (64, 'COL02', 'Recreation Park II', None, 'Columbus', 'OH', 'US'), (65, 'COL03', 'Neil Park I', None, 'Columbus', 'OH', 'US'), (66, 'COL04', 'Neil Park II', None, 'Columbus', 'OH', 'US'), (67, 'COV01', 'Star Baseball Park', None, 'Covington', 'KY', 'US'), (68, 'DAY01', 'Fairview Park', None, 'Dayton', 'OH', 'US'), (69, 'DEN01', 'Mile High Stadium', None, 'Denver', 'CO', 'US'), (70, 'DEN02', 'Coors Field', None, 'Denver', 'CO', 'US'), (71, 'DET01', 'Recreation Park', None, 'Detroit', 'MI', 'US'), (72, 'DET02', 'Bennett Park', None, 'Detroit', 'MI', 'US'), (73, 'DET03', 'Burns Park', 'West End Park', 'Detroit', 'MI', 'US'), (74, 'DET04', 'Tiger Stadium', 'Navin Field; Briggs Stadium', 'Detroit', 'MI', 'US'), (75, 'DET05', 'Comerica Park', None, 'Detroit', 'MI', 'US'), (76, 'DOV01', 'Fairview Park Fair Grounds', None, 'Dover', 'DE', 'US'), (77, 'ELM01', 'Maple Avenue Driving Park', None, 'Elmira', 'NY', 'US'), (78, 'FOR01', 'Grand Duchess', 'Hamilton Field', 'Fort Wayne', 'IN', 'US'), (79, 'FOR03', 'Jailhouse Flats', None, 'Fort Wayne', 'IN', 'US'), (80, 'FTB01', 'Fort Bragg Field', None, 'Fort Bragg', 'NC', 'US'), (81, 'GEA01', 'Geauga Lake Grounds', "Beyerle's Park", 'Geauga Lake', 'OH', 'US'), (82, 'GLO01', 'Gloucester Point Grounds', None, 'Gloucester City', 'NJ', 'US'), (83, 'GRA01', 'Ramona Park', None, 'Grand Rapids', 'MI', 'US'), (84, 'HAR01', 'Harrison Field', None, 'Harrison', 'NJ', 'US'), (85, 'HOB01', 'Elysian Field', None, 'Hoboken', 'NJ', 'US'), (86, 'HON01', 'Aloha Stadium', None, 'Honolulu', 'HI', 'US'), (87, 'HOU01', 'Colt Stadium', None, 'Houston', 'TX', 'US'), (88, 'HOU02', 'Astrodome', None, 'Houston', 'TX', 'US'), (89, 'HOU03', 'Minute Maid Park', 'Enron Field; Astros Field', 'Houston', 'TX', 'US'), (90, 'HRT01', 'Hartford Ball Club Grounds', None, 'Hartford', 'CT', 'US'), (91, 'HRT02', 'Hartford Trotting Park', None, 'Hartford', 'CT', 'US'), (92, 'IND01', 'South Street Park', None, 'Indianapolis', 'IN', 'US'), (93, 'IND02', 'Seventh Street Park I', None, 'Indianapolis', 'IN', 'US'), (94, 'IND03', 'Bruce Grounds', None, 'Indianapolis', 'IN', 'US'), (95, 'IND04', 'Seventh Street Park II', None, 'Indianapolis', 'IN', 'US'), (96, 'IND05', 'Seventh Street Park III', None, 'Indianapolis', 'IN', 'US'), (97, 'IND06', 'Indianapolis Park', None, 'Indianapolis', 'IN', 'US'), (98, 'IND07', 'Federal League Park', 'Washington Park', 'Indianapolis', 'IN', 'US'), (99, 'IRO01', 'Windsor Beach', None, 'Irondequoit', 'NY', 'US'), (100, 'JER01', 'Oakdale Park', None, 'Jersey City', 'NJ', 'US'), (101, 'JER02', 'Roosevelt Stadium', None, 'Jersey City', 'NJ', 'US'), (102, 'KAN01', 'Athletic Park', None, 'Kansas City', 'MO', 'US'), (103, 'KAN02', 'Association Park', None, 'Kansas City', 'MO', 'US'), (104, 'KAN03', 'Exposition Park', None, 'Kansas City', 'MO', 'US'), (105, 'KAN04', 'Gordon and Koppel Field', None, 'Kansas City', 'MO', 'US'), (106, 'KAN05', 'Municipal Stadium', None, 'Kansas City', 'MO', 'US'), (107, 'KAN06', 'Kauffman Stadium', 'Royals Stadium', 'Kansas City', 'MO', 'US'), (108, 'KEO01', 'Perry Park', "Walte's Pasture", 'Keokuk', 'IA', 'US'), (109, 'LAS01', 'Cashman Field', None, 'Las Vegas', 'NV', 'US'), (110, 'LBV01', "The Ballpark at Disney's Wide World", None, 'Lake Buena Vista', 'FL', 'US'), (111, 'LOS01', 'Los Angeles Memorial Coliseum', None, 'Los Angeles', 'CA', 'US'), (112, 'LOS02', 'Wrigley Field', None, 'Los Angeles', 'CA', 'US'), (113, 'LOS03', 'Dodger Stadium', 'Chavez Ravine', 'Los Angeles', 'CA', 'US'), (114, 'LOU01', 'Louisville Baseball Park', None, 'Louisville', 'KY', 'US'), (115, 'LOU02', 'Eclipse Park I', None, 'Louisville', 'KY', 'US'), (116, 'LOU03', 'Eclipse Park II', None, 'Louisville', 'KY', 'US'), (117, 'LOU04', 'Eclipse Park III', None, 'Louisville', 'KY', 'US'), (118, 'LUD01', 'Ludlow Baseball Park', None, 'Ludlow', 'KY', 'US'), (119, 'MAS01', 'Long Island Grounds', None, 'Maspeth', 'NY', 'US'), (120, 'MIA01', 'Sun Life Stadium', 'JoeRobbie; ProPlayer; Dolphin; LandShark', 'Miami', 'FL', 'US'), (121, 'MIA02', 'Marlins Park', None, 'Miami', 'FL', 'US'), (122, 'MID01', 'Mansfield Club Grounds', None, 'Middletown', 'CT', 'US'), (123, 'MIL01', 'Milwaukee Base-Ball Grounds', None, 'Milwaukee', 'WI', 'US'), (124, 'MIL02', 'Wright Street Grounds', None, 'Milwaukee', 'WI', 'US'), (125, 'MIL03', 'Athletic Park', None, 'Milwaukee', 'WI', 'US'), (126, 'MIL04', 'Lloyd Street Grounds', None, 'Milwaukee', 'WI', 'US'), (127, 'MIL05', 'County Stadium', None, 'Milwaukee', 'WI', 'US'), (128, 'MIL06', 'Miller Park', None, 'Milwaukee', 'WI', 'US'), (129, 'MIN01', 'Athletic Park', None, 'Minneapolis', 'MN', 'US'), (130, 'MIN02', 'Metropolitan Stadium', None, 'Bloomington', 'MN', 'US'), (131, 'MIN03', 'Hubert H. Humphrey Metrodome', None, 'Minneapolis', 'MN', 'US'), (132, 'MIN04', 'Target Field', None, 'Minneapolis', 'MN', 'US'), (133, 'MNT01', 'Estadio Monterrey', None, 'Monterrey', 'Nuevo Leon', 'MX'), (134, 'MON01', 'Parc Jarry', 'Jarry Park', 'Montreal', 'QC', 'CA'), (135, 'MON02', 'Stade Olympique', 'Olympic Stadium', 'Montreal', 'QC', 'CA'), (136, 'NEW01', 'Howard Avenue Grounds', 'Brewster Park', 'New Haven', 'CT', 'US'), (137, 'NEW02', 'Hamilton Park', None, 'New Haven', 'CT', 'US'), (138, 'NEW03', 'Geauga Lake Grounds', "Beyerle's Park", 'Geauga Lake', 'OH', 'US'), (139, 'NWK01', "Wiedenmeyer's Park", None, 'Newark', 'NJ', 'US'), (140, 'NYC01', 'Union Grounds', None, 'Brooklyn', 'NY', 'US'), (141, 'NYC02', 'Capitoline Grounds', None, 'Brooklyn', 'NY', 'US'), (142, 'NYC03', 'Polo Grounds I (Southeast Diamond)', None, 'New York', 'NY', 'US'), (143, 'NYC04', 'Polo Grounds II (Southwest Diamond)', None, 'New York', 'NY', 'US'), (144, 'NYC05', 'Washington Park I', None, 'Brooklyn', 'NY', 'US'), (145, 'NYC06', 'Metropolitan Park', None, 'New York', 'NY', 'US'), (146, 'NYC07', "Grauer's Ridgewood Park", 'Ridgewood Park I', 'Queens', 'NY', 'US'), (147, 'NYC08', 'Washington Park II', None, 'Brooklyn', 'NY', 'US'), (148, 'NYC09', 'Polo Grounds III', None, 'New York', 'NY', 'US'), (149, 'NYC10', 'Polo Grounds IV', None, 'New York', 'NY', 'US'), (150, 'NYC11', 'Eastern Park', None, 'Brooklyn', 'NY', 'US'), (151, 'NYC12', 'Washington Park III', None, 'Brooklyn', 'NY', 'US'), (152, 'NYC13', 'Hilltop Park', None, 'New York', 'NY', 'US'), (153, 'NYC14', 'Polo Grounds V', None, 'New York', 'NY', 'US'), (154, 'NYC15', 'Ebbets Field', None, 'Brooklyn', 'NY', 'US'), (155, 'NYC16', 'Yankee Stadium I', None, 'New York', 'NY', 'US'), (156, 'NYC17', 'Shea Stadium', 'William A. Shea Stadium', 'New York', 'NY', 'US'), (157, 'NYC18', "Wallace's Ridgewood Park", 'Ridgewood Park II', 'Queens', 'NY', 'US'), (158, 'NYC19', 'Washington Park IV', None, 'Brooklyn', 'NY', 'US'), (159, 'NYC20', 'Citi Field', None, 'New York', 'NY', 'US'), (160, 'NYC21', 'Yankee Stadium II', None, 'New York', 'NY', 'US'), (161, 'OAK01', 'Oakland-Alameda County Coliseum', 'Network Associates Coliseum', 'Oakland', 'CA', 'US'), (162, 'PEN01', 'East End Park', 'Pendleton Park', 'Cincinnati', 'OH', 'US'), (163, 'PHI01', 'Jefferson Street Grounds', 'Athletics Park', 'Philadelphia', 'PA', 'US'), (164, 'PHI02', 'Centennial Park', None, 'Philadelphia', 'PA', 'US'), (165, 'PHI03', 'Oakdale Park', None, 'Philadelphia', 'PA', 'US'), (166, 'PHI04', 'Recreation Park', None, 'Philadelphia', 'PA', 'US'), (167, 'PHI05', 'Keystone Park', None, 'Philadelphia', 'PA', 'US'), (168, 'PHI06', 'Huntingdon Grounds I', None, 'Philadelphia', 'PA', 'US'), (169, 'PHI07', 'Forepaugh Park', None, 'Philadelphia', 'PA', 'US'), (170, 'PHI08', 'University of Penn. Athletic Field', None, 'Philadelphia', 'PA', 'US'), (171, 'PHI09', 'Baker Bowl', None, 'Philadelphia', 'PA', 'US'), (172, 'PHI10', 'Columbia Park', None, 'Philadelphia', 'PA', 'US'), (173, 'PHI11', 'Shibe Park', 'Connie Mack Stadium', 'Philadelphia', 'PA', 'US'), (174, 'PHI12', 'Veterans Stadium', None, 'Philadelphia', 'PA', 'US'), (175, 'PHI13', 'Citizens Bank Park', None, 'Philadelphia', 'PA', 'US'), (176, 'PHI14', 'Huntingdon Grounds II', None, 'Philadelphia', 'PA', 'US'), (177, 'PHO01', 'Chase Field', 'Bank One Ballpark', 'Phoenix', 'AZ', 'US'), (178, 'PIT01', 'Union Park', None, 'Pittsburgh', 'PA', 'US'), (179, 'PIT02', 'Exposition Park I', 'Lower Field', 'Pittsburgh', 'PA', 'US'), (180, 'PIT03', 'Exposition Park II', 'Upper Field', 'Pittsburgh', 'PA', 'US'), (181, 'PIT04', 'Recreation Park', None, 'Pittsburgh', 'PA', 'US'), (182, 'PIT05', 'Exposition Park III', None, 'Pittsburgh', 'PA', 'US'), (183, 'PIT06', 'Forbes Field', None, 'Pittsburgh', 'PA', 'US'), (184, 'PIT07', 'Three Rivers Stadium', None, 'Pittsburgh', 'PA', 'US'), (185, 'PIT08', 'PNC Park', None, 'Pittsburgh', 'PA', 'US'), (186, 'PRO01', 'Adelaide Avenue Grounds', None, 'Providence', 'RI', 'US'), (187, 'PRO02', 'Messer Street Grounds', None, 'Providence', 'RI', 'US'), (188, 'RCK01', 'Agricultural Society Fair Grounds', None, 'Rockford', 'IL', 'US'), (189, 'RIC01', 'Richmond Fair Grounds', None, 'Richmond', 'VA', 'US'), (190, 'RIC02', 'Allens Pasture', None, 'Richmond', 'VA', 'US'), (191, 'ROC01', 'Culver Field I', None, 'Rochester', 'NY', 'US'), (192, 'ROC02', 'Culver Field II', None, 'Rochester', 'NY', 'US'), (193, 'ROC03', 'Ontario Beach Grounds', None, 'Rochester', 'NY', 'US'), (194, 'SAI01', 'St. George Cricket Grounds', None, 'New York', 'NY', 'US'), (195, 'SAN01', 'Qualcomm Stadium', 'San Diego/Jack Murphy Stadium', 'San Diego', 'CA', 'US'), (196, 'SAN02', 'PETCO Park', None, 'San Diego', 'CA', 'US'), (197, 'SEA01', "Sick's Stadium", None, 'Seattle', 'WA', 'US'), (198, 'SEA02', 'Kingdome', None, 'Seattle', 'WA', 'US'), (199, 'SEA03', 'Safeco Field', None, 'Seattle', 'WA', 'US'), (200, 'SFO01', 'Seals Stadium', None, 'San Francisco', 'CA', 'US'), (201, 'SFO02', 'Candlestick Park', '3Com Park', 'San Francisco', 'CA', 'US'), (202, 'SFO03', 'AT&T Park', 'Pacific Bell Park; SBC Park', 'San Francisco', 'CA', 'US'), (203, 'SJU01', 'Estadio Hiram Bithorn', None, 'San Juan', None, 'PR'), (204, 'SPR01', 'Hampden Park Race Track', 'Springfield Track', 'Springfield', 'MA', 'US'), (205, 'STL01', 'Red Stockings Base Ball Park', None, 'St. Louis', 'MO', 'US'), (206, 'STL02', 'Grand Avenue Park', None, 'St. Louis', 'MO', 'US'), (207, 'STL03', "Sportsman's Park I", None, 'St. Louis', 'MO', 'US'), (208, 'STL04', 'Union Grounds', None, 'St. Louis', 'MO', 'US'), (209, 'STL05', 'Robison Field', None, 'St. Louis', 'MO', 'US'), (210, 'STL06', "Sportsman's Park II", None, 'St. Louis', 'MO', 'US'), (211, 'STL07', "Sportsman's Park III", 'Busch Stadium I', 'St. Louis', 'MO', 'US'), (212, 'STL08', "Handlan's Park", 'Federal League Park', 'St. Louis', 'MO', 'US'), (213, 'STL09', 'Busch Stadium II', None, 'St. Louis', 'MO', 'US'), (214, 'STL10', 'Busch Stadium III', None, 'St. Louis', 'MO', 'US'), (215, 'STP01', 'Tropicana Field', None, 'St. Petersburg', 'FL', 'US'), (216, 'SYD01', 'Sydney Cricket Ground', None, 'Sydney', 'New South Wales', 'AU'), (217, 'SYR01', 'Star Park I', 'Newell Park', 'Syracuse', 'NY', 'US'), (218, 'SYR02', 'Star Park II', None, 'Syracuse', 'NY', 'US'), (219, 'SYR03', 'Iron Pier', None, 'Syracuse', 'NY', 'US'), (220, 'THR01', 'Three Rivers Park', None, 'Three Rivers', 'NY', 'US'), (221, 'TOK01', 'Tokyo Dome', None, 'Tokyo', 'Tokyo', 'JP'), (222, 'TOL01', 'League Park', None, 'Toledo', 'OH', 'US'), (223, 'TOL02', 'Tri-State Fair Grounds', None, 'Toledo', 'OH', 'US'), (224, 'TOL03', 'Speranza Park', None, 'Toledo', 'OH', 'US'), (225, 'TOL04', 'Armory Park', None, 'Toledo', 'OH', 'US'), (226, 'TOR01', 'Exhibition Stadium', None, 'Toronto', 'ON', 'CA'), (227, 'TOR02', 'Rogers Centre', 'Skydome', 'Toronto', 'ON', 'CA'), (228, 'TRO01', "Haymakers' Grounds", None, 'Troy', 'NY', 'US'), (229, 'TRO02', 'Putnam Grounds', None, 'Troy', 'NY', 'US'), (230, 'WAR01', 'Rocky Point Park', None, 'Warwick', 'RI', 'US'), (231, 'WAS01', 'Olympic Grounds', None, 'Washington', 'DC', 'US'), (232, 'WAS02', 'National Grounds', None, 'Washington', 'DC', 'US'), (233, 'WAS03', 'Capitol Grounds', None, 'Washington', 'DC', 'US'), (234, 'WAS04', 'Athletic Park', None, 'Washington', 'DC', 'US'), (235, 'WAS05', 'Swampoodle Grounds', None, 'Washington', 'DC', 'US'), (236, 'WAS06', 'Boundary Field', None, 'Washington', 'DC', 'US'), (237, 'WAS07', 'American League Park I', None, 'Washington', 'DC', 'US'), (238, 'WAS08', 'American League Park II', None, 'Washington', 'DC', 'US'), (239, 'WAS09', 'Griffith Stadium', None, 'Washington', 'DC', 'US'), (240, 'WAS10', 'Robert F. Kennedy Stadium', 'D.C. Stadium', 'Washington', 'DC', 'US'), (241, 'WAS11', 'Nationals Park', None, 'Washington', 'DC', 'US'), (242, 'WAT01', 'Troy Ball Club Grounds', None, 'Watervliet', 'NY', 'US'), (243, 'WAV01', 'Waverly Fairgrounds', None, 'Waverly', 'NJ', 'US'), (244, 'WEE01', 'Monitor Grounds', None, 'Weehawken', 'NJ', 'US'), (245, 'WHE01', 'Island Grounds', None, 'Wheeling', 'WV', 'US'), (246, 'WIL01', 'Union Street Park', None, 'Wilmington', 'DE', 'US'), (247, 'WIL02', 'BB&T Ballpark at Bowman Field', None, 'Williamsport', 'PA', 'US'), (248, 'WNY01', 'West New York Field Club Grounds', None, 'West New York', 'NJ', 'US'), (249, 'WOR01', 'Agricultural County Fair Grounds I', None, 'Worcester', 'MA', 'US'), (250, 'WOR02', 'Agricultural County Fair Grounds II', None, 'Worcester', 'MA', 'US'), (251, 'WOR03', 'Worcester Driving Park Grounds', None, 'Worcester', 'MA', 'US')]
+>>> 
