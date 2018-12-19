@@ -1,18 +1,18 @@
-from sqlalchemy import create_engine
 import argparse
 import pandas as pd
 import sqlite3
 import csv
 
 def main():
-    database = "/Users/Azreal/Documents/miscPython/test.db"
-    # create a database connection
-    conn = create_connection(database)
-    if conn is not None:
-    	imported_df = pd.read_csv("/Users/Azreal/Downloads/baseballdatabank-master/core/Parks.csv")
-    	imported_df.to_sql("parks", con=conn, index=False, if_exists='replace')
-    else:
-        print("Error! cannot create the database connection.")
+    argparsesqlite()
+
+def argparsesqlite():
+	parser = argparse.ArgumentParser()
+	parser.add_argument("file_path", help="Location of CSV file to load")
+	parser.add_argument("name_of_table" , help='Name of the new table to create in the sqlite3 db. ')
+	parser.add_argument("database", help='Name of the database to load data')
+	args = parser.parse_args()
+	importing(args.database, args.file_path, args.name_of_table)
 
 def importintosqlite(csvfile, name):
 	engine = create_engine('sqlite://', echo=False)
@@ -20,12 +20,15 @@ def importintosqlite(csvfile, name):
 	imported_df.to_sql(str(name), con=engine)
 	engine.execute("select * from Parks limit 5").fetchall()
 
-def argparsesqlite():
-	parser = argparse.ArgumentParser()
-	parser.add_argument("csvfile", help="Location of CSV file to load")
-	parser.add_argument("name" , help='Name of the new table to create in the sqlite3 db. ')
-	args = parser.parse_args()
-	full_grep = importintosqlite(args.csvfile, args.name)
+#"/Users/Azreal/Downloads/baseballdatabank-master/core/Parks.csv"
+
+def importing(database, file_path, name_of_table):
+    conn = create_connection(database) #create a database connection
+    if conn is not None:
+    	imported_df = pd.read_csv(file_path)
+    	imported_df.to_sql(name_of_table, con=conn, index=False, if_exists='replace')
+    else:
+        print("Error, cannot create the database connection.")
 
 def create_connection(db_file):
 	try: 
