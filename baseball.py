@@ -14,7 +14,7 @@ def argparsesqlite():
 	args = parser.parse_args()
 	importing(args.database, args.file_path, args.name_of_table)
 
-def importintosqlite(csvfile, name):
+def importintosqlite(csvfile, name): #Old function
 	engine = create_engine('sqlite://', echo=False)
 	imported_df = pd.read_csv(csvfile)
 	imported_df.to_sql(str(name), con=engine)
@@ -22,7 +22,7 @@ def importintosqlite(csvfile, name):
 
 #"/Users/Azreal/Downloads/baseballdatabank-master/core/Parks.csv"
 
-def importing(database, file_path, name_of_table):
+def importing(database, file_path, name_of_table): #new function
     conn = create_connection(database) #create a database connection
     if conn is not None:
     	imported_df = pd.read_csv(file_path)
@@ -30,7 +30,7 @@ def importing(database, file_path, name_of_table):
     else:
         print("Error, cannot create the database connection.")
 
-def create_connection(db_file):
+def create_connection(db_file): #Function to create connection to sqlite3 db
 	try: 
 		conn = sqlite3.connect(db_file)
 		return conn
@@ -39,7 +39,7 @@ def create_connection(db_file):
 
 	return None
 
-def create_table(conn, create_table_sql):
+def create_table(conn, create_table_sql): #Function to create table in sqlite3 db
 	try:
 		c = conn.cursor()
 		c.execute(create_table_sql)
