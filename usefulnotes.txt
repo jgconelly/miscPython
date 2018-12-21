@@ -73,3 +73,89 @@ stackoverflow sort
 
 
 python -m idlelib.idle
+
+/Users/Azreal/Downloads/baseballdatabank-master/core/parks.csv
+
+I have played through this game a couple of times now, and I am really impressed with the depth of the story telling. I wouldn't characterize this as a video game, it really is immersive and interactive story telling. The VR is very impressive and maybe some of the best I have seen yet. I hope Blackthorn continues to churn out awesome content like this. 
+
+
+
+
+
+12/20/18
+
+Fun watch: Andy Andres "Sabermetrics 101: Introduction to Baseball"
+
+Pandas is great for ETL, takes out some of the human element. 
+
+Pandas indexes: Pandas is a column oriented table set. Generally Postgres and others are row based. 
+
+Database, ID, name, age, is_dead
+	8 bytes, 32 bytes, 1 byte, 1 bit = 329 bits total. The semi-conducter companies come back and say you get 42 bytes. Eventually up to 44 bytes
+	Matchine word - logical notion of a memory segment -> 8 bit bytes, 4 bit nibbles -> 16 bit words -> 32 bit words -> 64 bits
+
+	This is all Row Oriented. It generally sucks
+
+	NUMA - Non-uniform memory access. 
+
+	Eventually it decided that things make more sense to be column oriented. An index is used which improves the memory usage. Contigeous vertical
+
+	Numby is the underlying store in Pandas. Packs everything in nd-array. 
+
+	slow: for row in df:
+			t += row['is_dead']
+	fast: t = df['is dead'].sum() -> popcount. Super fast! This is highlevel python code. This is actually faster than C 
+
+	Numpy is written in fortran, not c! 
+
+How would you write a query on pandas table where the age of the person is greater than 10? Something like this I think, filter_mask = xl_vals["Date"] < end_date. Why did they do it this way? 
+
+B-Tree index: N-way tree, similar to a Binary Tree which goes 2 directions. 
+
+Sql will build an index. Thi sindex will have pointers to rhe rows. Look up the is_dead bit and then add it. 
+
+df[df['age'] >10]['is_dead'].sum() will return a bit array mask like [1, 0, 0, 1, 0, 1, 0] for example. Builds smaller columns. This is optimized in hardware. 
+
+Possible to make this go even faster! (df['is_dead'][df['age'] > 10]).sum()
+
+Google creates a sparse matrix, they don't use row or column based dbs. 
+
+DB browser for SQLlite: Think about how to model this data. Very different things in terms of what's actually possible. 
+
+All databases are supposed to identity themselves by four properties: Atomicity, Consistency, Isolation, Durability (ACID)
+
+SQLlite: Very course, only one person can write at a time. MyIsam was the default for MYsql until 2009. Would only lock tables. Replaced by InnoDB which more ACID complient. 
+Postgres has been the same throughout. If you ripped the powerout on Postgres, and plugged it back in, 
+
+Sqllite: locks entire db. 
+Myisam: Locks tables
+Postgres: lock individual rows
+
+There are other data stores which lock only single fields. Can result in dead-lock. 
+
+Grant's code is on the dropbox: Check out zipfile, and pathlib. 
+
+pre-check, skip-check, setup, work, cleanup, post-check 
+
+Spark and Hadoop are both totally different style data bases. 
+
+
+Checkout ipython as well, might be better for development. %history gives you everything you typed, copy and paste it in, re-factor into functions. 
+
+%history ~2/1-100 (this is a magic command, %magic will talk about all of these)
+
+ls will try to run this as python code, but if it fails, it will run the 'magic' version of it. 
+
+def swap(a, b):
+	a, b = b, a #tuple unpacking
+	return a, b
+dis.dis(sqa)
+
+%timeit: superuseful. Creates complete testing environment, disables the garbage collector. It will run your code a million times. IF you have an an error in your code, you will watch that unfold. 
+
+!ls = command in ipython. You can combine bash stuff, and python stuff! 
+
+Feedback on the code: 
+Use a with statement in order to close the connection to the db
+
+Simulate a game of baseball! How would that work? Count RBIs, 4 bases. Most likely a poisson distribution. Bonus points for making this fast! How do you persist that information? 
