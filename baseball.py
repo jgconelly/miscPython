@@ -24,11 +24,12 @@ def importintosqlite(csvfile, name): #Old function
 
 def importing(database, file_path, name_of_table): #new function
     conn = create_connection(database) #create a database connection
-    if conn is not None:
-    	imported_df = pd.read_csv(file_path)
-    	imported_df.to_sql(name_of_table, con=conn, index=False, if_exists='replace')
-    else:
-        print("Error, cannot create the database connection.")
+    with conn as conn:
+    	if conn is not None:
+    		imported_df = pd.read_csv(file_path)
+    		imported_df.to_sql(name_of_table, con=conn, index=False, if_exists='replace')
+    	else:
+        	print("Error, cannot create the database connection.")
 
 def create_connection(db_file): #Function to create connection to sqlite3 db
 	try: 
