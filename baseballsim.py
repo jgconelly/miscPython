@@ -9,26 +9,27 @@ using mookie betts 2017 season to start
 """
 
 import pandas as pd
-
-
+import random
 
 def main():
-
-def getTeams():
+	ba = getBattingAverage(166, 628)
+	obp = getOnbasePercentage(166, 77, 2, 628)
+	print (ba, obp)
+	ballInPlay()
 
 def getBattingAverage(hits, atbats):
-	#atbats = 628
-	#hits = 166
-	return (round(hits / atbats, 3)
+	return (round(hits / atbats, 3))
 
-def getOnbasePercentage(hits, walks, hitsbypitch, plateapp):
-	#atbats = 628
-	#hits = 166
-	#walks = 77
-	#hbp = 2
+def getOnbasePercentage(hits, walks, hbp, atbats):
 	return (round(((hits + walks + hbp) / atbats), 3))
 
+def ballInPlay():
+	batting = getBattingAverage(166, 628)
+	if batting <= random.random():
+		print ("There is a ball in play!")
+	else:
+		print ("There is no ball in play.")	
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 	main()
 
