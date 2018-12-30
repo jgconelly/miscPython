@@ -112,7 +112,7 @@ How would you write a query on pandas table where the age of the person is great
 
 B-Tree index: N-way tree, similar to a Binary Tree which goes 2 directions. 
 
-Sql will build an index. Thi sindex will have pointers to rhe rows. Look up the is_dead bit and then add it. 
+Sql will build an index. This index will have pointers to rhe rows. Look up the is_dead bit and then add it. 
 
 df[df['age'] >10]['is_dead'].sum() will return a bit array mask like [1, 0, 0, 1, 0, 1, 0] for example. Builds smaller columns. This is optimized in hardware. 
 
