@@ -25,10 +25,11 @@ def getOnbasePercentage(hits, walks, hbp, atbats):
 
 def ballInPlay():
 	batting = getBattingAverage(166, 628)
-	if batting <= random.random():
+	if batting <= round(random.random(), 3):
 		print ("There is a ball in play!")
 	else:
-		print ("There is no ball in play.")	
+		print ("There is no ball in play.")
+
 
 if __name__ == '__main__':
 	main()
