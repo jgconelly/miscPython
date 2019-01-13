@@ -1,3 +1,13 @@
+"""Sabermetrics Part 1 --- CSV File loader
+
+References
+----------
+
+* http://www.seanlahman.com/files/database/readme2017.txt
+
+"""
+
+
 import argparse
 import pandas as pd
 import sqlite3
