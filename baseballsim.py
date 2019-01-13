@@ -1,4 +1,4 @@
-"""Sabermetrics Part 2 --- Baseball game simu
+"""Sabermetrics Part 2 --- Baseball game simulator
 
 References
 ----------
@@ -16,6 +16,9 @@ def main():
 	obp = getOnbasePercentage(166, 77, 2, 628)
 	print (ba, obp)
 	ballInPlay()
+
+def creatediamond():
+	diamond = [['_'] * 4]
 
 def getbattingaverage(hits, atbats):
 	return (round(hits / atbats, 3))
