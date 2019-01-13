@@ -29,11 +29,21 @@ def ballInPlay():
 	balls = 0
 	strikes = 0
 	outs = 0
-	print (rnum)
-	if batting >= rnum:
-		print ("There is a ball in play!")
-	else:
-		print ("There is no ball in play.")
+
+	while strikes < 3:
+		print (rnum)
+		if batting >= rnum:
+			print ("There is a ball in play!")
+		else:
+			print ("There is no ball in play.")
+			strikes += 1
+
+	if strikes == 3:
+		print("The player has struck out.")
+		outs += 1
+		
+	if outs == 3:
+		print("The inning has ended.")
 
 
 if __name__ == '__main__':
