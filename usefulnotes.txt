@@ -159,3 +159,48 @@ Feedback on the code:
 Use a with statement in order to close the connection to the db
 
 Simulate a game of baseball! How would that work? Count RBIs, 4 bases. Most likely a poisson distribution. Bonus points for making this fast! How do you persist that information? 
+
+
+
+1/18/19
+
+Baseball Sims, very difficult to test. How do you test if the model is failing or regressing? 
+
+Grant's baseball sim: Using nonlocal, calling a function inside of a function. 
+
+Checkout python-requests.org. Grant copied that format. 
+
+John cook running statistics. Grant turned that a python script. Gorilla. 
+
+
+Nonlocal: can be used to bind value in a nonlocal scope(enclosing) rather than have it come from the locals. Mutuate the locacl scope of the parent function. Mutate the variables. 
+Why do it this way? To save memory. Doing it the way I would have done it would have resulted in more memory usage. 
+
+_ is generally used because the variable itself isn't used anywhere. 
+
+pylint: Database of best practices, some of those are syntax, some are used for best practices. Warnings can be turned on or off. Pylint will generate an rc file.
+We tell the RC file what we care about and what should be addressed.  
+
+Make a swiss army knife package, see gj on git hub. adding package to pypi. 
+
+Check out Sphinx: Tool for making python documentation. Used on the complete python docutmention. 
+
+Syphinx has something called extensions, a good example of this is Autodoc. 
+
+Doctest will make sure that the docstring you create is actually true. You can possible get full coverage from doctest. 
+You can embed in these docstrings too. 
+
+For Data: Record and replay. Capture all inputs and outputs from the system. 
+For exisiting inputs, should it return the same output. 
+
+unittest.mock - this could blow your mind. Build me an object that will do anything I bid it to. 
+
+unittest.mock.patch - I would like to create an alternative reality. 
+
+
+
+TO DO: 
+- Read through mock
+- Add more to the baseball sim! Check out Grant's code. 
+- Check out pylint.
+- Consider making own module, python/gj pypi.com

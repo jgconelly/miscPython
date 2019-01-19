@@ -8,7 +8,6 @@ using mookie betts 2017 season to start
 
 """
 
-import pandas as pd
 import random
 
 def main():
