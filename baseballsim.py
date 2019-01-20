@@ -10,12 +10,6 @@ using mookie betts 2017 season to start
 
 import random
 
-def main():
-	ba = getBattingAverage(166, 628)
-	obp = getOnbasePercentage(166, 77, 2, 628)
-	print (ba, obp)
-	ballInPlay()
-
 def creatediamond():
 	diamond = [['_'] * 4]
 
@@ -55,6 +49,12 @@ def ballinplay():
 	if outs == 3:
 		print("The inning has ended.")
 
+
+def main():
+	ba = getBattingAverage(166, 628)
+	obp = getOnbasePercentage(166, 77, 2, 628)
+	print (ba, obp)
+	ballInPlay()
 
 if __name__ == '__main__':
 	main()
