@@ -32,12 +32,15 @@ def ballinplay(number_at_bats):
 		balls = 0
 		strikes = 0
 		outs = 0
+		hits = 0
+		strike_out = 0
 
 		while strikes < 3:
 			print (rnum)
 			if batting >= rnum:
 				print ("There is a ball in play!")
 				strikes = 4
+				hits += 1
 			else:
 				print ("There is no ball in play.")
 				rnum = round(random.random(), 3)
@@ -46,13 +49,16 @@ def ballinplay(number_at_bats):
 		if strikes == 3:
 			print("The player has struck out.")
 			outs += 1
-			loop +=1
+			loop += 1
+			strike_out += 1
 		else:
 			print("The player is on base.")
-			loop +=1
+			loop += 1
 
 		if outs == 3:
 			print("The inning has ended.")
+	print('Number of Hits: ' + str(hits))
+	print('Number of Strike Outs: ' + str(strike_out))
 
 
 def main():
