@@ -25,7 +25,6 @@ def choose_length():
 
 def ballinplay(number_at_bats):
 	loop = 0
-
 	while loop <= number_at_bats:
 		rnum = round(random.random(), 3)
 		batting = getbattingaverage(166, 628)
@@ -59,7 +58,6 @@ def ballinplay(number_at_bats):
 			print("The inning has ended.")
 	print('Number of Hits: ' + str(hits))
 	print('Number of Strike Outs: ' + str(strike_out))
-
 
 def main():
 	ballinplay(choose_length())
