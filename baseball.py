@@ -1,5 +1,10 @@
 """Sabermetrics Part 1 --- CSV File loader
 
+Part 1 of 3 in the sabermetrics project. This script loads csv files into a sqlite3 database. 
+Sqlite was chosen because of its simplicity and locks are currently not an issue. 
+This script functions by reading in csv files one at a time which can be done through the command line
+given the argparser function. 
+
 References
 ----------
 
@@ -18,22 +23,15 @@ def main():
 
 def argparsesqlite():
 	parser = argparse.ArgumentParser()
-	parser.add_argument("file_path", help="Location of CSV file to load")
-	parser.add_argument("name_of_table" , help='Name of the new table to create in the sqlite3 db. ')
-	parser.add_argument("database", help='Name of the database to load data')
+	parser.add_argument('file_path', help='File path of CSV file to load.')
+	parser.add_argument('name_of_table' , help='Name of the new table to create in the sqlite3 db. ')
+	parser.add_argument('database', help='Name of the database to load data into.')
 	args = parser.parse_args()
 	importing(args.database, args.file_path, args.name_of_table)
 
-def importintosqlite(csvfile, name): #Old function
-	engine = create_engine('sqlite://', echo=False)
-	imported_df = pd.read_csv(csvfile)
-	imported_df.to_sql(str(name), con=engine)
-	engine.execute("select * from Parks limit 5").fetchall()
-
-#"/Users/Azreal/Downloads/baseballdatabank-master/core/Parks.csv"
-
-def importing(database, file_path, name_of_table): #new function
-    conn = create_connection(database) #create a database connection
+def importing(database, file_path, name_of_table): 
+	"importing function to bring data into sqlite3 table"
+    conn = create_connection(database)
     with conn as conn:
     	if conn is not None:
     		imported_df = pd.read_csv(file_path)
@@ -41,7 +39,8 @@ def importing(database, file_path, name_of_table): #new function
     	else:
         	print("Error, cannot create the database connection.")
 
-def create_connection(db_file): #Function to create connection to sqlite3 db
+def create_connection(db_file):
+	"function to create connection to sqlite3 database"
 	try: 
 		conn = sqlite3.connect(db_file)
 		return conn
@@ -50,7 +49,8 @@ def create_connection(db_file): #Function to create connection to sqlite3 db
 
 	return None
 
-def create_table(conn, create_table_sql): #Function to create table in sqlite3 db
+def create_table(conn, create_table_sql):
+	"function to create table in sqlite3 database"
 	try:
 		c = conn.cursor()
 		c.execute(create_table_sql)
