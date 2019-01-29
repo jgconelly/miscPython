@@ -10,9 +10,6 @@ using mookie betts 2017 season to start
 
 import random
 
-def creatediamond():
-	diamond = [['_'] * 4]
-
 def getbattingaverage(hits, atbats):
 	return (round(hits / atbats, 3))
 
