@@ -12,7 +12,6 @@ References
 
 """
 
-
 import argparse
 import pandas as pd
 import sqlite3
