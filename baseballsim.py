@@ -25,16 +25,17 @@ def choose_length():
 
 def ballinplay(number_at_bats):
 	"Using random number generator to simulate a player batting"
-	loop = 0
-	while loop <= number_at_bats:
-		rnum = round(random.random(), 3)
-		batting = getbattingaverage(166, 628)
-		balls = 0
-		strikes = 0
-		outs = 0
-		hits = 0
-		strike_out = 0
+	loop = 1
+	balls = 0
+	strikes = 0
+	outs = 0
+	hits = 0
+	strike_out = 0
 
+	batting = getbattingaverage(166, 628)
+	rnum = round(random.random(), 3)
+
+	while loop <= number_at_bats:
 		while strikes < 3:
 			print (rnum)
 			if batting >= rnum:
@@ -51,17 +52,23 @@ def ballinplay(number_at_bats):
 			outs += 1
 			loop += 1
 			strike_out += 1
+			strikes = 0
+			rnum = round(random.random(), 3)
 		else:
 			print("The player is on base.")
 			loop += 1
+			strikes = 0
+			rnum = round(random.random(), 3)
 
 		if outs == 3:
 			print("The inning has ended.")
 	print('Number of Hits: ' + str(hits))
 	print('Number of Strike Outs: ' + str(strike_out))
+	print('Batting Average: ' + str(hits/number_at_bats))
 
 def main():
-	ballinplay(choose_length())
+	number_at_bats = choose_length()
+	ballinplay(number_at_bats)
 
 if __name__ == '__main__':
 	main()
