@@ -2,10 +2,8 @@
 
 References
 ----------
-
 * http://www.seanlahman.com/files/database/readme2017.txt
 using mookie betts 2017 season to start
-
 """
 
 import random
