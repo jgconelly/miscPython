@@ -23,6 +23,10 @@ def choose_length():
 	number_at_bats = int(input("Enter length for simulator: "))
 	return number_at_bats
 
+def reset_rand_num():
+	rnum = round(random.random(), 3)
+	return rnum
+
 def ballinplay(number_at_bats):
 	"Using random number generator to simulate a player batting"
 	loop = 1
