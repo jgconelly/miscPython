@@ -1,7 +1,11 @@
+"""
+First attempt at a simple game. This is a very basic version of TTT currently, more rules are needed.
+"""
+
 theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
-print(theBoard)
 
 def printBoard(board):
+    "Printing out the board as needed"
     print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])
     print('-+-+-')
     print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
