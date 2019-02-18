@@ -17,10 +17,10 @@ test_list = [10, 15, 3, 7]
 
 def test_for_k(total):
 	"Using itertools combinations to create pairs to sum"
-	for i in combinations(test, 2):
+	for i in combinations(test_list, 2):
 		if sum(i) == total:
-			print("yes")
+			print("yes", i)
 		else:
-			print("No")
+			print("No", i)
 	
 test_for_k(17)
