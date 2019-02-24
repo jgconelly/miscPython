@@ -8,7 +8,7 @@ using mookie betts 2017 season to start
 
 import random
 
-def getbattingaverage(hits, atbats):
+def calculatebattingave(hits, atbats):
 	"Batting average calculation"
 	return (round(hits / atbats, 3))
 
@@ -18,12 +18,8 @@ def getonbasepercentage(hits, walks, hbp, atbats):
 
 def choose_length():
 	"Currently this is the number of at bats to simulate for a given player."
-	number_at_bats = int(input("Enter length for simulator: "))
+	number_at_bats = int(input("Enter number of at bats to simulate: "))
 	return number_at_bats
-
-def reset_rand_num():
-	rnum = round(random.random(), 3)
-	return rnum
 
 def ballinplay(number_at_bats):
 	"Using random number generator to simulate a player batting"
@@ -34,7 +30,7 @@ def ballinplay(number_at_bats):
 	hits = 0
 	strike_out = 0
 
-	batting = getbattingaverage(166, 628)
+	batting = calculatebattingave(166, 628)
 	rnum = round(random.random(), 3)
 
 	while loop <= number_at_bats:
@@ -64,7 +60,7 @@ def ballinplay(number_at_bats):
 
 		if outs == 3:
 			print("The inning has ended.")
-	print('Number of Hits: ' + str(hits))
+	print('\nNumber of Hits: ' + str(hits))
 	print('Number of Strike Outs: ' + str(strike_out))
 	print('Batting Average: ' + str(hits/number_at_bats))
 
@@ -74,4 +70,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
