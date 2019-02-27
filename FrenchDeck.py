@@ -1,3 +1,7 @@
+"""
+French Deck Class from Fluent Python
+"""
+
 import collections
 
 Card = collections.namedtuple('Card', ['rank', 'suit'])
