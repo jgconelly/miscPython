@@ -6,6 +6,7 @@ References
 using mookie betts 2017 season to start
 """
 
+import argparse
 import logging
 
 from bisect import bisect
@@ -31,6 +32,21 @@ def reset_rand_num():
     rnum = round(random.random(), 3)
     return rnum
 
+def argparsebb():
+    #number_at_bats = choose_length()
+    #ballinplay(number_at_bats)
+    "Main entry point for testing as a script."
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--iterations', type=int, default=1000000)
+    parser.add_argument('-s', '--seed', type=int, default=None)
+    parser.add_argument('-v', '--verbose', action='store_const',
+                        const=logging.DEBUG, default=logging.INFO)
+    args = parser.parse_args()
+    seed(args.seed)
+    logging.basicConfig(level=args.verbose, format='%(message)s')
+    wins = test(args.iterations)
+    logging.info('Win ratio: %.3f', wins / args.iterations)
+
 def test(iterations):
     "Simulate multiple games and return number of wins."
     lineups = (
@@ -39,6 +55,7 @@ def test(iterations):
             # ^-- 90 Singles, 30 Doubles, 10 Triples, 5 Homeruns, 400 Outs
             (80, 100, 105, 125, 525),   # .238 BA
             (70, 100, 110, 160, 555),   # .288 BA
+            ()
         ]),
         cycle([  # home team
             (100, 130, 140, 150, 500),  # .300 BA
@@ -71,7 +88,9 @@ def simulate_game(lineups):
         for team in (away, home):
             logging.debug('%s Team at Bat', 'Home' if team else 'Away')
             outs = 0
-            first = second = third = 0
+            first = 0
+            second = 0
+            third = 0
             while outs < 3:
                 weights = next(lineups[team])
                 total = weights[-1]
@@ -92,7 +111,7 @@ def simulate_game(lineups):
                     advance(3)
                     scores[team] += 1
                 else:
-                    assert option == 'Out', f'unknown option: {option}'
+                    option == 'Out'
                     outs += 1
                 log = '%9s Outs: %s/3 Bases: [%s, %s, %s] Score: %s-%s'
                 logging.debug(log, option, outs, first, second, third, *scores)
@@ -145,20 +164,7 @@ def ballinplay(number_at_bats):
     print('Batting Average: ' + str(hits/number_at_bats))
 
 def main():
-    #number_at_bats = choose_length()
-    #ballinplay(number_at_bats)
-    "Main entry point for testing as a script."
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--iterations', type=int, default=1000000)
-    parser.add_argument('-s', '--seed', type=int, default=None)
-    parser.add_argument('-v', '--verbose', action='store_const',
-                        const=logging.DEBUG, default=logging.INFO)
-    args = parser.parse_args()
-    seed(args.seed)
-    logging.basicConfig(level=args.verbose, format='%(message)s')
-    wins = test(args.iterations)
-    logging.info('Win ratio: %.3f', wins / args.iterations)
+    argparsebb()
 
 if __name__ == '__main__':
     main()
